@@ -1,4 +1,8 @@
-const Sequelize = require('sequelize');
-const db = new Sequelize('postgres://localhost/GCI')
+const db = require('./db')
 
-module.exports = db;
+// register models
+require('./models/user')
+
+module.exports = db
+
+

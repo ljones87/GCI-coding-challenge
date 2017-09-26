@@ -1,4 +1,4 @@
-const { db } = require('./server/index');
+const db = require('./server/db');
 const User = require('./server/models/user')
 
 
@@ -23,9 +23,9 @@ const createUser = (model, user) => model.create(user)
 
 db.sync({ force: true })
 .then(() => {
-  return Promise.all([
+  return Promise.all(
     fakeUsers.map(person => createUser(User, person))
-  ])
+  )
 })
 .then(() => {
   console.log('Database seeded and ready to review');

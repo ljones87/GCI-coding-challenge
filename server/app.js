@@ -23,6 +23,8 @@ app.get('/*', function (req, res, next) {
   res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
+app.use('/api', require('./api'))
+
 // Handle 404s
 app.use(function (req, res, next) {
   const err = new Error('Not Found');
