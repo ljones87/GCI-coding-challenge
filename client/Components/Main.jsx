@@ -1,8 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 
-
-class Main extends React.component {
+class Main extends React.Component {
   render () {
     return (
       <div>
@@ -12,12 +11,16 @@ class Main extends React.component {
   }
 }
 
-const mapStateToProps = () => {
-
+const mapStateToProps = (state) => {
+  return  {
+    users: state.users
+  }
 }
 
-const mapDispatchToProps = () => {
+const mapDispatchToProps = (dispatch) => {
+  return  {
 
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);
