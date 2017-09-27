@@ -13,6 +13,7 @@ const UserList = (props) => {
   if (users) {
     return (
       <div>
+        <h4 className="LJ">Lina Jones GCI React Challenge</h4>
         <h2 className="banner">Current Users</h2>
         <div className="btn add">
         <Link to={'/add-user'}>
@@ -23,7 +24,7 @@ const UserList = (props) => {
         <table>
           <thead>
             <tr>
-              <th>Remove</th>
+              <th className="deleteH">Remove</th>
               <th>Name</th>
               <th>Address</th>
               <th>Edit</th>
@@ -33,7 +34,7 @@ const UserList = (props) => {
             {
               users && users.map(user => (
                 <tr key={user.id}>
-                  <td className="delete">
+                  <td className="deleteB">
                     <FaTrash
                         id={user.id}
                         onClick={handleClick}
