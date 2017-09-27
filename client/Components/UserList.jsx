@@ -68,6 +68,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     handleClick(event) {
+      event.preventDefault()
       const userId = event.target.id;
       dispatch(deleteUserData(userId));
     }
