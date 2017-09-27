@@ -21,7 +21,8 @@
     "sequelize": "^4.2.1"
   },
   "scripts": {
-    "start": "webpack -w & nodemon server/app.js",
+    "start": "node server/app.js",
+    "start-dev": "webpack -w & nodemon server/app.js",
     "seed": "node ./seed.js"
   },
   "devDependencies": {
