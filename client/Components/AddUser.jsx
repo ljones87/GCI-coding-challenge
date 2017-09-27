@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addUserData } from '../store'
+import { Link } from 'react-router-dom';
+import { addUserData } from '../store';
+//import { FormData } from './FormData.jsx';
 
 const AddUser = (props) => {
   return (
@@ -8,12 +10,12 @@ const AddUser = (props) => {
       <h2> New User Information </h2>
       <form
         onSubmit={props.handleSubmit}>
-
+        <div>
         <div className="row">
           <label>First Name</label>
           <div>
             <input
-              firstName="firstName"
+              name="firstName"
               type="text"
               required
             />
@@ -25,7 +27,7 @@ const AddUser = (props) => {
           <label>Last Name</label>
           <div>
             <input
-              lastName="lastName"
+              name="lastName"
               type="text"
               required
             />
@@ -36,7 +38,7 @@ const AddUser = (props) => {
           <label>Street</label>
           <div>
             <input
-              street="street"
+              name="street"
               type="text"
               required
             />
@@ -47,7 +49,7 @@ const AddUser = (props) => {
           <label>City</label>
           <div>
             <input
-              city="city"
+              name="city"
               type="text"
               required
             />
@@ -58,14 +60,38 @@ const AddUser = (props) => {
           <label>State</label>
           <div>
             <input
-              state="state"
+              name="state"
               type="text"
               required
             />
           </div>
         </div>
-
+        <div className="col-sm-offset-2 col-sm-10">
+          <button type="submit">
+          submit
+          </button>
+        </div>
+      </div>
       </form>
     </div>
-  )
-}
+  );
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  console.log("ADD USER OWN PROPS", ownProps)
+  return {
+    handleSubmit(event) {
+      event.preventDefault();
+      const firstName = event.target.firstName.value;
+      const lastName = event.target.lastName.value;
+      const street = event.target.street.value;
+      const city = event.target.city.value;
+      const state = event.target.state.value;
+      const credentials = {firstName, lastName, street, city, state};
+      dispatch(addUserData(credentials));
+      ownProps.history.push('/');
+    }
+  };
+};
+
+export default connect(null, mapDispatchToProps)(AddUser);

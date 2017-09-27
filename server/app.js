@@ -14,15 +14,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Static middleware
-app.use(express.static(path.join(__dirname, '..', 'public')));
+
 
 app.use('/api', require('./api'))
 
+app.use(express.static(path.join(__dirname, '..', 'public')));
 // For all GET requests that aren't to an API route,
 // will send the index.html
 app.get('/*', function (req, res, next) {
   res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
+
+
 
 // Handle 404s
 app.use(function (req, res, next) {

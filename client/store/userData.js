@@ -31,8 +31,8 @@ export const addUserData = (user) => dispatch => {
     .catch(err => console.log(err));
 }
 
-export const updateUserData = (userId) => dispatch => {
-  axios.put(`/api/users/${userId}`, userId)
+export const updateUserData = (userId, info) => dispatch => {
+  axios.put(`/api/users/${userId}`, info)
     .then(res => dispatch(updateUser(res.data)))
     .catch(err => console.log(err));
 };
@@ -49,6 +49,8 @@ export default function users (state = [], action) {
   switch (action.type) {
     case GET_USERS:
       return action.users;
+    case ADD_USER:
+      return [...state, action.user];
     case UPDATE_USER:
       return [...state, action.userId];
     case DELETE_USER:

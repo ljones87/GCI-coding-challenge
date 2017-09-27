@@ -33,8 +33,9 @@ router.post('/', (req, res, next) => {
   });
 
 router.put('/:userId', (req, res, next) => {
+  console.log("SERVER USER EDIT", req.body)
   req.user.update(req.body)
-    .then(updatedUser => res.sendStatus(202).json(updatedUser))
+    .then(() => res.sendStatus(202))
     .catch(next);
 });
 
