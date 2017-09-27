@@ -24,15 +24,22 @@ router.get('/', (req, res, next) => {
     .catch(next);
 });
 
+router.post('/', (req, res, next) => {
+    User.create(req.body)
+      .then(user => {
+        return res.status(201).json(user);
+      })
+      .catch(next);
+  });
 
 router.put('/:userId', (req, res, next) => {
   req.user.update(req.body)
     .then(updatedUser => res.sendStatus(202).json(updatedUser))
-    .catch(next)
-})
+    .catch(next);
+});
 
 router.delete('/:userId', (req, res, next) => {
   req.user.destroy()
     .then(() => res.sendStatus(202))
-    .catch(next)
-})
+    .catch(next);
+});
