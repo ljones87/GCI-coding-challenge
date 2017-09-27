@@ -1,9 +1,11 @@
 $body-background: #EEE;
 $text-on-color: #FFF;
 $banner-color:#3587A4;
+$button-color:#BA1740;
 $table-header: #88CCF1;
 $table-cell:#f4f7f8;
 $font-table: 'Lato', sans-serif;
+
 
 body {
   background: $body-background;
@@ -15,10 +17,11 @@ body {
 
 .banner {
   box-sizing: border-box;
+  font-family: $font-table;
   color: $text-on-color;
   background-color: $banner-color;
   overflow: auto;
-  padding: 18px 50px;
+  padding: 20px 50px;
   position: relative;
   top: 0;
   width: 100%;
@@ -43,6 +46,10 @@ table, form {
   overflow-y: scroll;
   position: static;
   width: 80%;
+
+    label {
+      font-family: $font-table;
+    }
 }
 
 thead th {
@@ -76,7 +83,7 @@ button {
   padding: 0em, 2em;
   margin-top: 2em;
   width: 15em;
-  border: 1px solid #e81c4f;
+  border: 1px solid $button-color;
   border-radius: 290486px;
   color: white;
   font-size: 0.6em;
@@ -103,9 +110,9 @@ button {
   font-size: 20px;
 }
 
-button :hover {
-  background:  #e81c4f;
-  color: white;
+button:hover {
+  background: $button-color;
+  color: $table-cell;
 }
 
 h2,
@@ -115,7 +122,7 @@ strong {
 
 
 h1, h4 {
-  font-family: 'Lato', sans-serif;
+  font-family: $font-table;
   margin-left: 5%;
 }
 

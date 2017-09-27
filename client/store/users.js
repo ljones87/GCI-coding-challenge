@@ -13,7 +13,7 @@ const DELETE_USER = 'DELETE_USER';
 
 const getUsers = users => ({type: GET_USERS, users});
 const addUser = user => ({type: ADD_USER, user});
-const updateUser = userId => ({type: UPDATE_USER, userId});
+const updateUser = user => ({type: UPDATE_USER, user});
 const deleteUser = userId => ({type: DELETE_USER, userId});
 
 
@@ -52,7 +52,7 @@ export default function users (state = [], action) {
     case ADD_USER:
       return [...state, action.user];
     case UPDATE_USER:
-      return [...state, action.userId];
+      return [...state, action.user];
     case DELETE_USER:
       return state.filter((user) => user.id !== action.userId);
     default:

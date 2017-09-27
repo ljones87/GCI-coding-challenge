@@ -25,6 +25,7 @@ const EditUser = (props) => {
               <label>First Name</label>
               <div>
                 <input
+                defaultValue={user.firstName}
                   name="firstName"
                   type="text"
                   required
@@ -37,6 +38,7 @@ const EditUser = (props) => {
               <label>Last Name</label>
               <div>
                 <input
+                defaultValue={user.lastName}
                   name="lastName"
                   type="text"
                   required
@@ -48,6 +50,7 @@ const EditUser = (props) => {
               <label>Street</label>
               <div>
                 <input
+                defaultValue={user.street}
                   name="street"
                   type="text"
                   required
@@ -59,6 +62,7 @@ const EditUser = (props) => {
               <label>City</label>
               <div>
                 <input
+                defaultValue={user.city}
                   name="city"
                   type="text"
                   required
@@ -70,6 +74,7 @@ const EditUser = (props) => {
               <label>State</label>
               <div>
                 <input
+                 defaultValue={user.state}
                   name="state"
                   type="text"
                   required
@@ -91,7 +96,7 @@ const EditUser = (props) => {
 const mapStateToProps = (state, ownProps) => {
   const userId = Number(ownProps.match.params.userId);
   return {
-    user: state.userData.find(user => user.id === userId),
+    user: state.users.find(user => user.id === userId),
   };
 };
 

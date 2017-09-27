@@ -26,15 +26,13 @@ router.get('/', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
     User.create(req.body)
-      .then(user => {
-        return res.status(201).json(user);
-      })
+      .then(user => res.status(201).json(user))
       .catch(next);
   });
 
 router.put('/:userId', (req, res, next) => {
   req.user.update(req.body)
-    .then(() => res.sendStatus(202))
+    .then(user => res.json(user))
     .catch(next);
 });
 

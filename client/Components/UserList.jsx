@@ -54,13 +54,13 @@ const UserList = (props) => {
       </div>
     );
   } else {
-    return <h1>loading</h1>;
+    return <h1>Loading</h1>;
   }
 };
 
 const mapStateToProps = (state) => {
   return {
-    users: state.userData
+    users: state.users
   };
 };
 

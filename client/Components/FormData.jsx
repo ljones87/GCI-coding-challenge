@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 //import FormData from './FormData.jsx';
 
 const EditUser = (props) => {
+  console.log("PROPS", props)
   if (!props.user) {
     return (
       <h1>Loading</h1>
