@@ -10,7 +10,6 @@ const EditUser = (props) => {
       <h1>Loading</h1>
     )
   } else {
-    console.log('Props')
     const { user } = props;
     return (
       <div >
