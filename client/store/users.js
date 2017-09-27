@@ -54,7 +54,6 @@ export default function users (state = [], action) {
     case UPDATE_USER:
       const index = state.findIndex(obj => obj.id === action.user.id)
       return Object.assign([...state], {[index]:    Object.assign({}, state[index],       action.user)})
-     //return [...state, action.user];
     case DELETE_USER:
       return state.filter((user) => user.id !== action.userId);
     default:
