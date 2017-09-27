@@ -15,6 +15,7 @@ class Main extends React.Component {
   }
 
   render() {
+
     return (
       <div id="main" className="container-fluid">
         <div className="col-xs-10">
