@@ -1,6 +1,8 @@
 
 Simple starter using Express, Node, Postgresql, React, and Redux
 
+Check out live app here: https://react-users.herokuapp.com/
+
 I used a postgresql database and seeded it with included file data. I am unfamiliar with other databases so unfortunatley cannot include accurate instructions for the backend setup if not postgresql.
 
 
