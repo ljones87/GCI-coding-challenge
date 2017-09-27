@@ -6,8 +6,8 @@ import { addUserData } from '../store';
 
 const AddUser = (props) => {
   return (
-    <div id="newUserForm">
-      <h2> New User Information </h2>
+    <div >
+      <h2 className='banner'> New User Information </h2>
       <form
         onSubmit={props.handleSubmit}>
         <div>
@@ -78,7 +78,6 @@ const AddUser = (props) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  console.log("ADD USER OWN PROPS", ownProps)
   return {
     handleSubmit(event) {
       event.preventDefault();

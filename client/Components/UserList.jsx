@@ -1,7 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { deleteUserData } from '../store';
+import FaTrash from 'react-icons/lib/fa/trash';
+import FaEdit from 'react-icons/lib/fa/edit';
+
 
 const UserList = (props) => {
 
@@ -10,33 +13,37 @@ const UserList = (props) => {
   if (users) {
     return (
       <div>
+        <h2 className="banner">Current Users</h2>
+        <div className="btn add">
+        <Link to={'/add-user'}>
+        <button className='add-user'>
+          Add New User
+        </button>
+      </Link></div>
         <table>
           <thead>
             <tr>
               <th>Remove</th>
-              <th>User Name</th>
+              <th>Name</th>
               <th>Address</th>
+              <th>Edit</th>
             </tr>
           </thead>
           <tbody>
             {
               users && users.map(user => (
                 <tr key={user.id}>
-                  <td className="btn delete">
-                    <button>
-                      <span
+                  <td className="delete">
+                    <FaTrash
                         id={user.id}
-                        onClick={handleClick}>X
-             </span>
-                    </button>
+                        onClick={handleClick}
+                        />
                   </td>
                   <th>{user.firstName} {user.lastName}</th>
                   <td>{user.street}, {user.city}, {user.state}</td>
-                  <td className="btn edit">
+                  <td className="edit">
                     <Link to={`/edit-user/${user.id}`}>
-                      <button className="btn btn-default btn-xs">
-                        <span >Edit</span>
-                      </button>
+                      <FaEdit />
                     </Link>
                   </td>
                 </tr>
@@ -44,11 +51,6 @@ const UserList = (props) => {
             }
           </tbody>
         </table>
-        <Link to={'/add-user'}>
-          <button>
-            Add New User
-          </button>
-        </Link>
       </div>
     );
   } else {
@@ -71,4 +73,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserList);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserList));

@@ -33,7 +33,6 @@ router.post('/', (req, res, next) => {
   });
 
 router.put('/:userId', (req, res, next) => {
-  console.log("SERVER USER EDIT", req.body)
   req.user.update(req.body)
     .then(() => res.sendStatus(202))
     .catch(next);

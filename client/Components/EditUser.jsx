@@ -10,81 +10,82 @@ const EditUser = (props) => {
       <h1>Loading</h1>
     )
   } else {
-  const { user } = props;
-  return (
-    <div>
-      <h2>Update Information for {user.firstName} {user.lastName}</h2>
-      <h4> Current Information:</h4>
-          <h5>{user.street}, {user.city}, {user.state}</h5>
-
-      <form
-        onSubmit={props.handleSubmit}>
-        <div>
-          <div className="row">
-            <label>First Name</label>
-            <div>
-              <input
-                name="firstName"
-                type="text"
-                required
-              />
+    console.log('Props')
+    const { user } = props;
+    return (
+      <div >
+        <h2 className='banner'>Update Information for {user.firstName} {user.lastName}</h2>
+        <h4>Current Information:
+          <span>  {user.street}, {user.city}, {user.state}</span>
+        </h4>
+        <form
+          onSubmit={props.handleSubmit}>
+          <div>
+            <div className="row">
+              <label>First Name</label>
+              <div>
+                <input
+                  name="firstName"
+                  type="text"
+                  required
+                />
+              </div>
             </div>
-          </div>
 
 
-          <div className="row">
-            <label>Last Name</label>
-            <div>
-              <input
-                name="lastName"
-                type="text"
-                required
-              />
+            <div className="row">
+              <label>Last Name</label>
+              <div>
+                <input
+                  name="lastName"
+                  type="text"
+                  required
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="row">
-            <label>Street</label>
-            <div>
-              <input
-                name="street"
-                type="text"
-                required
-              />
+            <div className="row">
+              <label>Street</label>
+              <div>
+                <input
+                  name="street"
+                  type="text"
+                  required
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="row">
-            <label>City</label>
-            <div>
-              <input
-                name="city"
-                type="text"
-                required
-              />
+            <div className="row">
+              <label>City</label>
+              <div>
+                <input
+                  name="city"
+                  type="text"
+                  required
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="row">
-            <label>State</label>
-            <div>
-              <input
-                name="state"
-                type="text"
-                required
-              />
+            <div className="row">
+              <label>State</label>
+              <div>
+                <input
+                  name="state"
+                  type="text"
+                  required
+                />
+              </div>
             </div>
-          </div>
-          <div className="col-sm-offset-2 col-sm-10">
-          <button type="submit">
-          submit
+            <div className="col-sm-offset-2 col-sm-10">
+              <button type="submit">
+                submit
           </button>
+            </div>
           </div>
-        </div>
-      </form>
-    </div>
-  );
-}
+        </form>
+      </div>
+    );
+  }
 };
 
 const mapStateToProps = (state, ownProps) => {
@@ -104,7 +105,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       const street = event.target.street.value;
       const city = event.target.city.value;
       const state = event.target.state.value;
-      const credentials = {firstName, lastName, street, city, state};
+      const credentials = { firstName, lastName, street, city, state };
       dispatch(updateUserData(userId, credentials));
       ownProps.history.push('/');
     }
