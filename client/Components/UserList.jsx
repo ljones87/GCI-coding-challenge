@@ -35,10 +35,11 @@ const UserList = (props) => {
               users && users.map(user => (
                 <tr key={user.id}>
                   <td className="deleteB">
-                    <FaTrash
-                        id={user.id}
-                        onClick={handleClick}
-                        />
+                    <span
+                    id={user.id}
+                    onClick={handleClick}>
+                    X
+                    </span>
                   </td>
                   <th>{user.firstName} {user.lastName}</th>
                   <td>{user.street}, {user.city}, {user.state}</td>
@@ -68,7 +69,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     handleClick(event) {
-      event.preventDefault()
+      event.preventDefault();
       const userId = event.target.id;
       dispatch(deleteUserData(userId));
     }

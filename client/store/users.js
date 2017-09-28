@@ -47,16 +47,21 @@ export const deleteUserData = (userId) => dispatch => {
 
 export default function users (state = [], action) {
   switch (action.type) {
-    case GET_USERS:
+    case GET_USERS: {
       return action.users;
-    case ADD_USER:
+    }
+    case ADD_USER: {
       return [...state, action.user];
-    case UPDATE_USER:
-      const index = state.findIndex(obj => obj.id === action.user.id)
-      return Object.assign([...state], {[index]: Object.assign({}, state[index], action.user)})
-    case DELETE_USER:
+    }
+    case UPDATE_USER:{
+      const index = state.findIndex(obj => obj.id === action.user.id);
+      return Object.assign([...state], {[index]: Object.assign({}, state[index], action.user)});
+    }
+    case DELETE_USER: {
       return state.filter((user) => user.id !== action.userId);
-    default:
+    }
+    default: {
       return state;
+    }
   }
 }
