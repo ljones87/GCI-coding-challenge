@@ -13,8 +13,13 @@ const UserList = (props) => {
   if (users) {
     return (
       <div>
-        <h4 className="LJ">Lina Jones GCI React Challenge</h4>
-        <h2 className="banner">Current Users</h2>
+        <h4 className="LJ">Lina Jones GCI React Challenge
+        <a href='https://github.com/ljones87/GCI-coding-challenge' >
+        <img className='git' src='GitHub-Mark-120px-plus.png' />
+      </a>
+        </h4>
+        <h2 className="banner">Current Users
+        </h2>
         <div className="btn add">
         <Link to={'/add-user'}>
         <button className='add-user'>
