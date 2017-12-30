@@ -17,8 +17,7 @@ const EditUser = (props) => {
         <h4>Current Information:
           <span>  {user.street}, {user.city}, {user.state}</span>
         </h4>
-        <form
-          onSubmit={props.handleSubmit}>
+        <form onSubmit={props.handleSubmit}>
           <div>
             <div className="row">
               <label>First Name</label>
@@ -81,7 +80,9 @@ const EditUser = (props) => {
               </div>
             </div>
             <div className="col-sm-offset-2 col-sm-10">
-              <button type="submit">
+              <button
+                type="submit"
+                >
                 submit
           </button>
             </div>

@@ -13,19 +13,20 @@ const UserList = (props) => {
   if (users) {
     return (
       <div>
-        <h4 className="LJ">Lina Jones GCI React Challenge
-        <a href='https://github.com/ljones87/GCI-coding-challenge' >
-        <img className='git' src='GitHub-Mark-120px-plus.png' />
-      </a>
-        </h4>
+        <div className="title">
+          <h4 className="LJ">Lina Jones GCI React Challenge</h4>
+          <a href='https://github.com/ljones87/GCI-coding-challenge' >
+            <img className='git' src='GitHub-Mark-120px-plus.png' />
+          </a>
+        </div>
         <h2 className="banner">Current Users
         </h2>
         <div className="btn add">
-        <Link to={'/add-user'}>
-        <button className='add-user'>
-          Add New User
+          <Link to={'/add-user'}>
+            <button className='add-user'>
+              Add New User
         </button>
-      </Link></div>
+          </Link></div>
         <table>
           <thead>
             <tr>
@@ -41,9 +42,9 @@ const UserList = (props) => {
                 <tr key={user.id}>
                   <td className="deleteB">
                     <span
-                    id={user.id}
-                    onClick={handleClick}>
-                    X
+                      id={user.id}
+                      onClick={handleClick}>
+                      X
                     </span>
                   </td>
                   <th>{user.firstName} {user.lastName}</th>

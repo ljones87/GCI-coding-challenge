@@ -6,11 +6,10 @@ import { addUserData } from '../store';
 
 const AddUser = (props) => {
   return (
-    <div >
-      <h2 className='banner'> New User Information </h2>
-      <form
-        onSubmit={props.handleSubmit}>
-        <div>
+    <div>
+      <h2 className='banner'> New User Details</h2>
+      <div className="container">
+      <form onSubmit={props.handleSubmit}>
         <div className="row">
           <label>First Name</label>
           <div>
@@ -66,13 +65,17 @@ const AddUser = (props) => {
             />
           </div>
         </div>
-        <div className="col-sm-offset-2 col-sm-10">
-          <button type="submit">
+        <div
+        className="col-sm-offset-2 col-sm-10">
+          <button
+           type="submit"
+           >
           submit
           </button>
         </div>
-      </div>
+
       </form>
+      </div>
     </div>
   );
 };

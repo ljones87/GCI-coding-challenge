@@ -7,11 +7,16 @@ $table-cell:#f4f7f8;
 $lj: #425E80;
 $font-table: 'Lato', sans-serif;
 
-
 body {
   background: $body-background;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.container {
+  display: flex;
 }
 
 /* Navigation */
@@ -30,8 +35,6 @@ body {
   margin-top: 10px;
 }
 
-
-
 .active {
   color: #88CCF1;
 }
@@ -42,7 +45,6 @@ table, form {
   height: 40%;
   left: 10%;
   margin: 20px auto;
-  overflow-y: scroll;
   position: static;
   width: 80%;
 
@@ -91,9 +93,7 @@ th, td {
   width: 17%;
 }
 
-form {
-  display: none;
-}
+
 button {
   padding: 0em, 2em;
   margin-top: 2em;
@@ -115,7 +115,14 @@ button {
   margin-left: 10%;
 }
 
+.title {
+  position: relative;
+}
+
 .git {
+  position: absolute;
+  top: -7px;
+  right: 20px;
   display: inline;
   height: 40px;
   width: 40px;

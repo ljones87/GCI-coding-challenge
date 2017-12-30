@@ -13465,7 +13465,7 @@ exports = module.exports = __webpack_require__(130)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n  background: #EEE;\n  margin: 0;\n  padding: 0; }\n\n/* Navigation */\n.banner {\n  box-sizing: border-box;\n  font-family: \"Lato\", sans-serif;\n  font-size: 30px;\n  color: #FFF;\n  background-color: #3587A4;\n  overflow: auto;\n  padding: 20px 50px;\n  position: relative;\n  top: 0;\n  width: 100%;\n  margin-top: 10px; }\n\n.active {\n  color: #88CCF1; }\n\n/* Table */\ntable, form {\n  height: 40%;\n  left: 10%;\n  margin: 20px auto;\n  overflow-y: scroll;\n  position: static;\n  width: 80%; }\n  table label, form label {\n    font-family: \"Lato\", sans-serif; }\n\nthead th {\n  background: #88CCF1;\n  color: #FFF;\n  font-family: \"Lato\", sans-serif;\n  font-size: 16px;\n  font-weight: 100;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n  padding-left: 20px; }\n\ntr {\n  background: #f4f7f8;\n  border-bottom: 1px solid #FFF;\n  margin-bottom: 5px; }\n\nth, td {\n  font-family: \"Lato\", sans-serif;\n  font-weight: 400;\n  font-size: 16px;\n  height: 30px;\n  padding: 10px;\n  text-align: left;\n  width: 33.3333%; }\n\n.deleteH {\n  font-size: 16px;\n  text-align: left;\n  width: 17%; }\n\n.deleteB {\n  font-size: 20px;\n  text-align: center;\n  width: 17%; }\n\nbutton {\n  padding: 0em, 2em;\n  margin-top: 2em;\n  width: 15em;\n  border: 1px solid #BA1740;\n  border-radius: 290486px;\n  color: white;\n  font-size: 0.6em;\n  letter-spacing: 0.2em;\n  padding: 1em 2em;\n  text-transform: uppercase;\n  text-decoration: none;\n  transition: none 200ms ease-out;\n  transition-property: color, background; }\n\n.add-user {\n  margin-left: 10%; }\n\n.git {\n  display: inline;\n  height: 40px;\n  width: 40px;\n  padding-left: 70%;\n  vertical-align: middle; }\n\n.edit {\n  text-align: center;\n  font-size: 20px; }\n\nbutton:hover {\n  background: #BA1740;\n  color: #f4f7f8; }\n\nh4 {\n  padding-left: 5%;\n  vertical-align: middle; }\n\n.LJ {\n  color: #425E80;\n  font-family: \"Lato\", sans-serif; }\n", ""]);
+exports.push([module.i, "body {\n  background: #EEE;\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  width: 100%; }\n\n.container {\n  display: flex; }\n\n/* Navigation */\n.banner {\n  box-sizing: border-box;\n  font-family: \"Lato\", sans-serif;\n  font-size: 30px;\n  color: #FFF;\n  background-color: #3587A4;\n  overflow: auto;\n  padding: 20px 50px;\n  position: relative;\n  top: 0;\n  width: 100%;\n  margin-top: 10px; }\n\n.active {\n  color: #88CCF1; }\n\n/* Table */\ntable, form {\n  height: 40%;\n  left: 10%;\n  margin: 20px auto;\n  position: static;\n  width: 80%; }\n  table label, form label {\n    font-family: \"Lato\", sans-serif; }\n\nthead th {\n  background: #88CCF1;\n  color: #FFF;\n  font-family: \"Lato\", sans-serif;\n  font-size: 16px;\n  font-weight: 100;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n  padding-left: 20px; }\n\ntr {\n  background: #f4f7f8;\n  border-bottom: 1px solid #FFF;\n  margin-bottom: 5px; }\n\nth, td {\n  font-family: \"Lato\", sans-serif;\n  font-weight: 400;\n  font-size: 16px;\n  height: 30px;\n  padding: 10px;\n  text-align: left;\n  width: 33.3333%; }\n\n.deleteH {\n  font-size: 16px;\n  text-align: left;\n  width: 17%; }\n\n.deleteB {\n  font-size: 20px;\n  text-align: center;\n  width: 17%; }\n\nbutton {\n  padding: 0em, 2em;\n  margin-top: 2em;\n  width: 15em;\n  border: 1px solid #BA1740;\n  border-radius: 290486px;\n  color: #BA1740;\n  background: white;\n  font-size: 0.6em;\n  letter-spacing: 0.2em;\n  padding: 1em 2em;\n  text-transform: uppercase;\n  text-decoration: none;\n  transition: none 200ms ease-out;\n  transition-property: color, background; }\n\n.add-user {\n  margin-left: 10%; }\n\n.title {\n  position: relative; }\n\n.git {\n  position: absolute;\n  top: -7px;\n  right: 20px;\n  display: inline;\n  height: 40px;\n  width: 40px;\n  padding-left: 70%;\n  vertical-align: middle; }\n\n.edit {\n  text-align: center;\n  font-size: 20px; }\n\nbutton:hover {\n  background: #BA1740;\n  color: #f4f7f8; }\n\nh4 {\n  padding-left: 5%;\n  vertical-align: middle; }\n\n.LJ {\n  color: #425E80;\n  font-family: \"Lato\", sans-serif; }\n", ""]);
 
 // exports
 
@@ -31469,9 +31469,13 @@ var UserList = function UserList(props) {
       'div',
       null,
       _react2.default.createElement(
-        'h4',
-        { className: 'LJ' },
-        'Lina Jones GCI React Challenge',
+        'div',
+        { className: 'title' },
+        _react2.default.createElement(
+          'h4',
+          { className: 'LJ' },
+          'Lina Jones GCI React Challenge'
+        ),
         _react2.default.createElement(
           'a',
           { href: 'https://github.com/ljones87/GCI-coding-challenge' },
@@ -32363,15 +32367,14 @@ var AddUser = function AddUser(props) {
     _react2.default.createElement(
       'h2',
       { className: 'banner' },
-      ' New User Information '
+      ' New User Details'
     ),
     _react2.default.createElement(
-      'form',
-      {
-        onSubmit: props.handleSubmit },
+      'div',
+      { className: 'container' },
       _react2.default.createElement(
-        'div',
-        null,
+        'form',
+        { onSubmit: props.handleSubmit },
         _react2.default.createElement(
           'div',
           { className: 'row' },
@@ -32464,10 +32467,13 @@ var AddUser = function AddUser(props) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'col-sm-offset-2 col-sm-10' },
+          {
+            className: 'col-sm-offset-2 col-sm-10' },
           _react2.default.createElement(
             'button',
-            { type: 'submit' },
+            {
+              type: 'submit'
+            },
             'submit'
           )
         )
@@ -32557,8 +32563,7 @@ var EditUser = function EditUser(props) {
       ),
       _react2.default.createElement(
         'form',
-        {
-          onSubmit: props.handleSubmit },
+        { onSubmit: props.handleSubmit },
         _react2.default.createElement(
           'div',
           null,
@@ -32662,7 +32667,9 @@ var EditUser = function EditUser(props) {
             { className: 'col-sm-offset-2 col-sm-10' },
             _react2.default.createElement(
               'button',
-              { type: 'submit' },
+              {
+                type: 'submit'
+              },
               'submit'
             )
           )
