@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const db = require('./index.js');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 2000;
 
 // Logging middleware
 app.use(morgan('dev'));
@@ -24,8 +24,6 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.get('/*', function (req, res, next) {
   res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
-
-
 
 // Handle 404s
 app.use(function (req, res, next) {

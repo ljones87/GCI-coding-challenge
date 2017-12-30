@@ -91,15 +91,17 @@ th, td {
   width: 17%;
 }
 
-
-
+form {
+  display: none;
+}
 button {
   padding: 0em, 2em;
   margin-top: 2em;
   width: 15em;
   border: 1px solid $button-color;
   border-radius: 290486px;
-  color: white;
+  color: $button-color;
+  background: white;
   font-size: 0.6em;
   letter-spacing: 0.2em;
   padding: 1em 2em;
